@@ -14,13 +14,13 @@ class ProductFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-           'name' => fake()->unique()->sentence(2),
-           'description' => fake()->text,
-           'price' => fake()->randomDigit,
-           'image_url' => fake()->imageUrl($width = 200, $hight = 200),
+            'name' => fake()->unique()->sentence(2),
+            'description' => fake()->text,
+            'price' => fake()->randomDigit,
+            'image_url' => fake()->imageUrl($width = 200, $hight = 200),
         ];
     }
 }

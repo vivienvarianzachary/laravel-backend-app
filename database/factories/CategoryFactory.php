@@ -2,23 +2,21 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Generator as Faker;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
- */
 class CategoryFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition()
+    protected $model = Category::class;
+
+    public function definition(): array
     {
+        $faker = app(Faker::class);
+
         return [
-            'name' => fake()-word(),
-            'description' => fake()->sentence(4),
+            'name' => $faker->word,
+            'description' => $faker->sentence(4),
         ];
     }
 }
